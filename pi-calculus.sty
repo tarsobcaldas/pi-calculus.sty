@@ -8,13 +8,29 @@
 \newcommand{\out}[1]{\overline{#1}}
 \newcommand{\outpt}[2]{\out{#1}{\langle}\name{#2}{\rangle}}
 \newcommand{\inpt}[2]{#1(\name{#2})}
-\newcommand{\restrict}[1]{\nu#1}
+\newcommand{\restrict}[1]{\nu#1\,}
 \newcommand{\prefix}[2]{#1.#2}
-\newcommand{\repli}[1]{!#1}%chktex 26
+\newcommand{\repli}[1]{{!#1}}%chktex 26
 \newcommand{\concurrent}[2]{#1\!\mid\!#2}
 \newcommand{\select}[3][\ell]{#2\oplus\outpt{#1}{#3}}
-\newcommand{\proc}{\@ifstar{Q}{P}}
+\newcommand{\proc}{\@ifstar{\@ifstar{R}{Q}}{P}}
 \newcommand{\offer}[3][\ell]{#2\&\{#1_i(\name{#3}_i).\proc_i\}_{i\in I}}
 \newcommand{\channel}{\@ifstar{d}{c}}
 \newcommand{\emptyact}{\epsilon}
-\providecommand{\var}{\@ifstar{y}{x}}
+\providecommand{\var}{\@ifstar{\@ifstar{z}{y}}{x}}
+\newcommand{\transition}[3][]{#2 \xrightarrow{#1} #3}
+\newcommand{\stateset}{\@ifstar{\mathcal{Q'}}{\mathcal{Q}}}
+\newcommand{\actionset}{\Sigma}
+\newcommand{\lts}{\@ifstar{\@ifstar{\mathcal{N}}{\mathcal{M}}}{\mathcal{L}}}
+\newcommand{\transitionset}{\mathcal{T}}
+\newcommand{\simu}{\mathscr{S}}
+\newcommand{\initstate}{q_0}
+\newcommand{\silent}{\tau}
+\newcommand{\state}{\@ifstar{q}{p}}
+\newcommand{\nameset}{\mathcal{N}}
+\newcommand{\actionprefix}{\pi}
+\newcommand{\procset}{\mathcal{P}}
+\newcommand{\pcontext}{\mathcal{C}}
+\newcommand{\emptycontext}{[\;]}
+\newcommand{\equivrel}{\cong}
+\newcommand{\reaction}[2]{#1 \rightarrow #2}
